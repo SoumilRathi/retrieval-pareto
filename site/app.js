@@ -1103,7 +1103,6 @@ function findKneePoint(frontier, axisField) {
 function renderTable(rows) {
   const tbody = document.querySelector("#systemsTable tbody");
   const sorted = [...rows].sort((a, b) => compareRows(a, b, state.sortKey, state.sortDirection));
-  renderTableHeading();
   byId("tableCount").textContent = `${sorted.length} ${sorted.length === 1 ? "row" : "rows"}`;
 
   if (!sorted.length) {
@@ -1126,18 +1125,6 @@ function renderTable(rows) {
       th.setAttribute("data-arrow", state.sortDirection === "asc" ? "↑" : "↓");
     }
   });
-}
-
-function renderTableHeading() {
-  const title = byId("systemsTableTitle");
-  if (!title) return;
-  const benchmark = state.benchmark;
-  const selectedDataset = state.datasetByBenchmark[benchmark] || "all";
-  const benchmarkRows = filteredRows().filter((row) => row.benchmark === benchmark);
-  const hasMultipleDatasets = unique(benchmarkRows.map((row) => row.dataset)).length > 1;
-  title.textContent = selectedDataset === "all" && hasMultipleDatasets
-    ? "Complete configurations"
-    : "All measured systems";
 }
 
 function tableRowHtml(row) {
