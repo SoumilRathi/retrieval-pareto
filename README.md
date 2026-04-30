@@ -18,7 +18,7 @@ The checked-in aggregate result files live under:
 results/<benchmark>/<dataset>/<retrieval_system>/<model>.json
 ```
 
-The compact dashboard data file is:
+The interactive website lives in `site/`. It includes Pareto charts, benchmark filters, a measured-systems table, result detail panels, and a methodology page. Its compact data file is:
 
 ```text
 site/data/results.json
@@ -36,7 +36,7 @@ make site-data
 
 ScaNN is Linux-only in this setup. Install it with `pip install '.[scann]'` on a Linux host before reproducing `dense-scann` rows.
 
-Serve the static dashboard locally:
+Serve the interactive website locally:
 
 ```bash
 python scripts/serve_site.py
