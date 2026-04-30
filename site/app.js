@@ -416,7 +416,7 @@ function normalizeRun(run, index) {
     protocol: run.protocol || {},
     result_path: run.result_path || "",
     latency_ms: toNumber(run.latency?.e2e_query_ms_p50),
-    latency_p99_ms: toNumber(run.latency?.e2e_query_ms_p99),
+    latency_p99_ms: toNumber(firstPresent(run.latency, "e2e_query_ms_p99", "serving_batch_1_e2e_ms_p99", "e2e_ms_p99")),
     storage_gb: storageBytes == null ? null : storageBytes / 1_000_000_000,
     cost_per_million_queries_usd: toNumber(run.cost?.cost_per_million_queries_usd),
   };
@@ -454,7 +454,7 @@ function normalizeBenchmarkResult(result, index) {
     },
     result_path: result.result_path || "",
     latency_ms: toNumber(result.latency?.e2e_query_ms_p50),
-    latency_p99_ms: toNumber(result.latency?.e2e_query_ms_p99),
+    latency_p99_ms: toNumber(firstPresent(result.latency, "e2e_query_ms_p99", "serving_batch_1_e2e_ms_p99", "e2e_ms_p99")),
     storage_gb: storageBytes == null ? null : storageBytes / 1_000_000_000,
     cost_per_million_queries_usd: toNumber(result.cost?.cost_per_million_queries_usd),
   };
@@ -743,6 +743,14 @@ function meanFinite(values) {
   const finite = values.filter((v) => isFiniteNumber(v));
   if (!finite.length) return null;
   return finite.reduce((sum, value) => sum + value, 0) / finite.length;
+}
+
+function firstPresent(source, ...keys) {
+  if (!source) return null;
+  for (const key of keys) {
+    if (source[key] != null) return source[key];
+  }
+  return null;
 }
 
 function renderChart(rows) {

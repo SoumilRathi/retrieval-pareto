@@ -97,7 +97,12 @@ def normalize_result(result: dict[str, Any], path: Path) -> dict[str, Any] | Non
         },
         "latency": {
             "e2e_query_ms_p50": latency.get("e2e_query_ms_p50"),
-            "e2e_query_ms_p99": latency.get("e2e_query_ms_p99"),
+            "e2e_query_ms_p99": first_present(
+                latency,
+                "e2e_query_ms_p99",
+                "serving_batch_1_e2e_ms_p99",
+                "e2e_ms_p99",
+            ),
             "tokenize_ms_p50": latency.get("tokenize_ms_p50"),
             "query_encode_ms_p50": latency.get("query_encode_ms_p50"),
             "retrieval_ms_p50_topk100": latency.get("retrieval_ms_p50_topk100"),
@@ -152,6 +157,14 @@ def normalize_status(status: str | None, latency: dict[str, Any], quality: dict[
     if has_quality and not has_latency:
         return "quality_only"
     return "completed"
+
+
+def first_present(source: dict[str, Any], *keys: str) -> Any:
+    for key in keys:
+        value = source.get(key)
+        if value is not None:
+            return value
+    return None
 
 
 def pick_index_bytes(storage: dict[str, Any]) -> int | float | None:
