@@ -2,7 +2,7 @@
 
 Production-oriented cost/quality benchmark for modern dense, late-interaction, sparse, and hybrid retrievers.
 
-Most retrieval benchmarks report one quality number per model. This repo treats a deployed retriever as a system: model plus search backend plus compression choices. The result is a Pareto view over quality, latency, and storage.
+Evaluates deployed retriever configurations across quality, latency, and storage: model plus search backend plus compression choices.
 
 ## What Is Included
 
@@ -24,7 +24,7 @@ The compact dashboard data file is:
 site/data/results.json
 ```
 
-Per-query ranking sidecars are not committed because they are large. They should be attached as a GitHub Release artifact named `retrieval-pareto-rankings-json.tar.gz`.
+Per-query ranking sidecars are not committed because they are large. Download them from the [`v1-data` release](https://github.com/SoumilRathi/retrieval-pareto/releases/tag/v1-data) as `retrieval-pareto-rankings-json.tar.gz`.
 
 ## Quickstart
 
@@ -75,7 +75,7 @@ Sparse and hybrid:
 
 ## Reading The Results
 
-The main public artifact is the Pareto curve, not a single leaderboard. Useful comparisons:
+Useful comparisons:
 
 - Quality vs latency: what quality can be bought at a serving-latency budget?
 - Quality vs storage: what quality can be bought at an index-size budget?
