@@ -193,6 +193,28 @@ select {
   color: var(--ink);
 }
 
+.main-nav .nav-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  color: var(--muted);
+  opacity: 0.75;
+  transition: opacity 140ms ease, color 140ms ease;
+}
+
+.main-nav .nav-icon:hover {
+  opacity: 1;
+  color: var(--ink);
+}
+
+.main-nav .nav-icon svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
 /* === Main =============================================================== */
 
 main {
@@ -1343,6 +1365,17 @@ table.systems tbody tr:hover td:first-child::before {
   color: var(--ink);
   word-break: break-all;
   max-width: 60%;
+}
+
+.drawer-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 120ms ease;
+}
+
+.drawer-link:hover {
+  border-bottom-color: var(--accent);
 }
 
 /* === Footer ============================================================ */

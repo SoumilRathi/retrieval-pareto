@@ -104,6 +104,8 @@ const FRONTIER_LABELS = {
   storage: ["Smallest on frontier", "Best balance", "Highest quality"],
 };
 
+const REPO_BLOB_URL = "https://github.com/SoumilRathi/retrieval-pareto/blob/main";
+
 // Frontend-side label tidy-up. The export script's model_label values are
 // mostly OK but a few are noisy ("Bm25 Py", "Mxbai Edge Colbert V0 32m") and
 // hybrid rows just show the last component instead of the full composition.
@@ -715,7 +717,7 @@ function aggregateAcrossDatasets(rows) {
       ...first,
       id: `agg:${first.benchmark}:${first.family}:${first.model_id}:${first.system}`,
       dataset: "_aggregated",
-      dataset_label: `${count} ${count === 1 ? "dataset" : "datasets"} · avg`,
+      dataset_label: "",
       quality: aggregatedQuality,
       quality_selected: aggregatedQuality[state.metric] ?? null,
       latency_ms: meanFinite(groupRows.map((r) => r.latency_ms)),
@@ -785,7 +787,7 @@ function renderChart(rows) {
       x: groupRows.map((row) => row[axis.field]),
       y: groupRows.map((row) => row.quality_selected),
       customdata: groupRows.map((row) => row.id),
-      text: groupRows.map((row) => `${row.model_label} · ${row.system_label}<br>${row.dataset_label}`),
+      text: groupRows.map((row) => `${row.model_label} · ${row.system_label}${row.dataset_label ? `<br>${row.dataset_label}` : ""}`),
       hovertemplate: `<b>%{text}</b><br>${axis.title}: %{x}<br>${METRICS[state.metric]}: %{y:.3f}<extra></extra>`,
       marker: {
         color: family.color,
@@ -1043,7 +1045,7 @@ function renderFrontierStrip(rows) {
       return `<button class="frontier-pick" type="button" data-id="${escapeAttr(row.id)}">
         <span class="frontier-eyebrow">${eyebrowMarkup}</span>
         <span class="frontier-name">${escapeHtml(row.model_label)}</span>
-        <span class="frontier-system">${escapeHtml(row.system_label)} · ${escapeHtml(row.dataset_label)}</span>
+        <span class="frontier-system">${escapeHtml(row.system_label)}${row.dataset_label ? ` · ${escapeHtml(row.dataset_label)}` : ""}</span>
         <span class="frontier-stats">${qualityBlock}${axisBlock}</span>
       </button>`;
     })
@@ -1114,7 +1116,7 @@ function renderTable(rows) {
   byId("tableCount").textContent = `${sorted.length} ${sorted.length === 1 ? "row" : "rows"}`;
 
   if (!sorted.length) {
-    tbody.innerHTML = `<tr><td colspan="6" class="empty" style="min-height:120px">No rows match the current filters</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="5" class="empty" style="min-height:120px">No rows match the current filters</td></tr>`;
   } else {
     tbody.innerHTML = sorted.map(tableRowHtml).join("");
     tbody.querySelectorAll("tr[data-id]").forEach((tr) => {
@@ -1143,8 +1145,7 @@ function tableRowHtml(row) {
           <span><strong>${escapeHtml(row.model_label)}</strong><small>${escapeHtml(FAMILY[row.family]?.label || row.family)}</small></span>
         </span>
       </td>
-      <td>${escapeHtml(row.dataset_label)}</td>
-      <td class="cell-system"><strong>${escapeHtml(row.system_label)}</strong><small>${escapeHtml(row.compression)}</small></td>
+      <td class="cell-system"><strong>${escapeHtml(row.system_label)}</strong></td>
       <td class="num">${formatMaybe(row.quality_selected, 3)}</td>
       <td class="num">${formatMaybe(row.latency_ms, 1)}</td>
       <td class="num">${formatMaybe(row.storage_gb, 3)}</td>
@@ -1156,7 +1157,7 @@ function openDrawer(row) {
   const drawer = byId("detailDrawer");
   byId("detailBody").innerHTML = `
     <div class="drawer-content">
-      <p class="eyebrow">${escapeHtml(BENCHMARK_TITLE[row.benchmark] || row.benchmark.toUpperCase())} · ${escapeHtml(row.dataset_label)}</p>
+      <p class="eyebrow">${escapeHtml(BENCHMARK_TITLE[row.benchmark] || row.benchmark.toUpperCase())}${row.dataset_label ? ` · ${escapeHtml(row.dataset_label)}` : ""}</p>
       <h2>${escapeHtml(row.model_label)}</h2>
       <p class="drawer-system"><strong>${escapeHtml(row.system_label)}</strong> · ${escapeHtml(row.backend)}<br>${escapeHtml(row.compression)} · ${escapeHtml(FAMILY[row.family]?.label || row.family)}</p>
 
@@ -1199,7 +1200,7 @@ function openDrawer(row) {
         <h3 class="drawer-section-title">Provenance</h3>
         <ul class="drawer-rows">
           <li><span class="label">Model ID</span><span class="value">${escapeHtml(row.model_id)}</span></li>
-          <li><span class="label">Result file</span><span class="value">${escapeHtml(row.result_path || "pending")}</span></li>
+          <li><span class="label">Result file</span><span class="value">${row.result_path ? `<a class="drawer-link" href="${REPO_BLOB_URL}/${escapeAttr(row.result_path)}" target="_blank" rel="noopener noreferrer">${escapeHtml(row.result_path)}</a>` : "pending"}</span></li>
         </ul>
       </section>
     </div>
