@@ -176,12 +176,14 @@ def backfill_hybrid_components(rows: list[dict[str, Any]]) -> None:
         sources = row.get("component_sources") or {}
         latency_components = dict((row.get("latency") or {}).get("component_e2e_ms_p50") or {})
         storage_components = dict((row.get("storage") or {}).get("component_index_bytes") or {})
+        component_rows: dict[str, dict[str, Any]] = {}
         for name, source in sources.items():
             component = by_key.get(
                 (row["benchmark"], row["dataset"], source.get("model"), source.get("system"))
             )
             if not component:
                 continue
+            component_rows[name] = component
             if latency_components.get(name) is None:
                 latency_components[name] = (component.get("latency") or {}).get("e2e_query_ms_p50")
             if storage_components.get(name) is None:
@@ -198,6 +200,27 @@ def backfill_hybrid_components(rows: list[dict[str, Any]]) -> None:
             row["latency"]["retrieval_ms_p50_topk100"] = total
             row["latency"]["status"] = "derived"
             row["status"] = "completed"
+
+        component_p99 = [
+            (component_rows.get(name, {}).get("latency") or {}).get("e2e_query_ms_p99")
+            for name in required
+        ]
+        if required and all(is_number(value) for value in component_p99):
+            row["latency"]["e2e_query_ms_p99"] = float(sum(component_p99))
+
+        component_encode_p50 = [
+            (component_rows.get(name, {}).get("latency") or {}).get("query_encode_ms_p50")
+            for name in required
+        ]
+        if required and all(is_number(value) for value in component_encode_p50):
+            row["latency"]["query_encode_ms_p50"] = float(sum(component_encode_p50))
+
+        component_retrieve_p50 = [
+            (component_rows.get(name, {}).get("latency") or {}).get("retrieval_ms_p50_topk100")
+            for name in required
+        ]
+        if required and all(is_number(value) for value in component_retrieve_p50):
+            row["latency"]["retrieval_ms_p50_topk100"] = float(sum(component_retrieve_p50))
 
 
 def normalize_status(status: str | None, latency: dict[str, Any], quality: dict[str, Any]) -> str:

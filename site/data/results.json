@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T22:39:55.793582+00:00",
+  "generated_at": "2026-04-30T22:46:55.184064+00:00",
   "runs": [
     {
       "backend": "binary-hamming-fp32-rerank",
@@ -7474,11 +7474,11 @@
           "sparse": 113.7549689883599
         },
         "e2e_query_ms_p50": 137.16371450573206,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 199.02487504063174,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 137.16371450573206,
+        "query_encode_ms_p50": 14.893441009917296,
+        "retrieval_ms_p50_topk100": 122.27027349581476,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -7549,11 +7549,11 @@
           "sparse": 113.7549689883599
         },
         "e2e_query_ms_p50": 184.75352598761674,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 253.2325743130059,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 184.75352598761674,
+        "query_encode_ms_p50": 37.16926999913994,
+        "retrieval_ms_p50_topk100": 147.5842559884768,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -7625,11 +7625,11 @@
           "sparse": 124.09437449969118
         },
         "e2e_query_ms_p50": 188.80205851382925,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 243.1909951520356,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 188.80205851382925,
+        "query_encode_ms_p50": 26.487103506951826,
+        "retrieval_ms_p50_topk100": 151.97554949554615,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -7696,11 +7696,11 @@
           "sparse": 113.7549689883599
         },
         "e2e_query_ms_p50": 161.3447804702446,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 225.66065120860003,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 161.3447804702446,
+        "query_encode_ms_p50": 22.275828989222646,
+        "retrieval_ms_p50_topk100": 139.06895148102194,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -7766,11 +7766,11 @@
           "sparse": 124.09437449969118
         },
         "e2e_query_ms_p50": 165.3933129964571,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 215.61907204762974,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 165.3933129964571,
+        "query_encode_ms_p50": 11.59366249703453,
+        "retrieval_ms_p50_topk100": 143.4602449880913,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -7836,11 +7836,11 @@
           "li": 47.58981148188468
         },
         "e2e_query_ms_p50": 70.99855699925683,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 81.77962237678003,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 70.99855699925683,
+        "query_encode_ms_p50": 37.16926999913994,
+        "retrieval_ms_p50_topk100": 33.82928700011689,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -7906,11 +7906,11 @@
           "li": 41.29893849676591
         },
         "e2e_query_ms_p50": 64.70768401413807,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 71.73804321580974,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 64.70768401413807,
+        "query_encode_ms_p50": 26.487103506951826,
+        "retrieval_ms_p50_topk100": 38.22058050718624,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -20762,11 +20762,11 @@
           "sparse": 108.23943148716353
         },
         "e2e_query_ms_p50": 173.5058024787577,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 314.58993755280966,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 173.5058024787577,
+        "query_encode_ms_p50": 13.293943993630819,
+        "retrieval_ms_p50_topk100": 160.21185848512687,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -20837,11 +20837,11 @@
           "sparse": 108.23943148716353
         },
         "e2e_query_ms_p50": 224.45204546966124,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 376.5949592238757,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 224.45204546966124,
+        "query_encode_ms_p50": 35.28847647248767,
+        "retrieval_ms_p50_topk100": 189.16356899717357,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -20913,11 +20913,11 @@
           "sparse": 124.71510199975455
         },
         "e2e_query_ms_p50": 186.7679524966661,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 374.55685560555133,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 186.7679524966661,
+        "query_encode_ms_p50": 24.288513994179084,
+        "retrieval_ms_p50_topk100": 196.97791098406014,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -20984,11 +20984,11 @@
           "sparse": 108.23943148716353
         },
         "e2e_query_ms_p50": 159.18567447806709,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 309.1184308880474,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 159.18567447806709,
+        "query_encode_ms_p50": 21.994532478856854,
+        "retrieval_ms_p50_topk100": 137.19114199921023,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -21054,11 +21054,11 @@
           "sparse": 124.71510199975455
         },
         "e2e_query_ms_p50": 172.4757244992361,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 307.080327269723,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 172.4757244992361,
+        "query_encode_ms_p50": 10.994570000548265,
+        "retrieval_ms_p50_topk100": 145.0054839860968,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -21124,11 +21124,11 @@
           "li": 50.946242990903556
         },
         "e2e_query_ms_p50": 116.21261398249771,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 129.4815500068944,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 116.21261398249771,
+        "query_encode_ms_p50": 35.28847647248767,
+        "retrieval_ms_p50_topk100": 80.92413751001004,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -21194,11 +21194,11 @@
           "li": 47.76062249948154
         },
         "e2e_query_ms_p50": 62.05285049691156,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 127.44344638857001,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 62.05285049691156,
+        "query_encode_ms_p50": 24.288513994179084,
+        "retrieval_ms_p50_topk100": 88.73847949689662,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -33531,11 +33531,11 @@
           "sparse": 0.619066006038338
         },
         "e2e_query_ms_p50": 18.23901703755837,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 30.766416410333473,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 18.23901703755837,
+        "query_encode_ms_p50": 13.087350031128153,
+        "retrieval_ms_p50_topk100": 5.151667006430216,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -33606,11 +33606,11 @@
           "sparse": 0.619066006038338
         },
         "e2e_query_ms_p50": 62.06090655177832,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 80.3398157202173,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 62.06090655177832,
+        "query_encode_ms_p50": 35.146124035236426,
+        "retrieval_ms_p50_topk100": 26.91478251654189,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -33682,11 +33682,11 @@
           "sparse": 0.732321001123637
         },
         "e2e_query_ms_p50": 49.085247502262064,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 68.22371329180896,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 49.085247502262064,
+        "query_encode_ms_p50": 23.838950030039996,
+        "retrieval_ms_p50_topk100": 29.819521514582448,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -33753,11 +33753,11 @@
           "sparse": 0.619066006038338
         },
         "e2e_query_ms_p50": 44.440955520258285,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 58.62476299982518,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 44.440955520258285,
+        "query_encode_ms_p50": 22.058774004108272,
+        "retrieval_ms_p50_topk100": 22.382181516150013,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -33823,11 +33823,11 @@
           "sparse": 0.732321001123637
         },
         "e2e_query_ms_p50": 35.76454150061181,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 46.50866057141684,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 35.76454150061181,
+        "query_encode_ms_p50": 10.751599998911843,
+        "retrieval_ms_p50_topk100": 25.28692051419057,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -33893,11 +33893,11 @@
           "li": 43.82188951421995
         },
         "e2e_query_ms_p50": 61.44184054573998,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 71.28845203027595,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 61.44184054573998,
+        "query_encode_ms_p50": 35.146124035236426,
+        "retrieval_ms_p50_topk100": 26.295716510503553,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -33963,11 +33963,11 @@
           "li": 35.032220499488176
         },
         "e2e_query_ms_p50": 48.35292650113843,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 59.17234960186761,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 48.35292650113843,
+        "query_encode_ms_p50": 23.838950030039996,
+        "retrieval_ms_p50_topk100": 29.20045550854411,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -45736,11 +45736,11 @@
           "sparse": 39.62687400053255
         },
         "e2e_query_ms_p50": 74.35993800754659,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 125.14537965442287,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 74.35993800754659,
+        "query_encode_ms_p50": 13.42946500517428,
+        "retrieval_ms_p50_topk100": 60.93047300237231,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -45811,11 +45811,11 @@
           "sparse": 39.62687400053255
         },
         "e2e_query_ms_p50": 124.52466400281992,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 181.8550187686924,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 124.52466400281992,
+        "query_encode_ms_p50": 35.83602300204802,
+        "retrieval_ms_p50_topk100": 88.6886410007719,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -45887,11 +45887,11 @@
           "sparse": 43.69587150722509
         },
         "e2e_query_ms_p50": 118.27890601853142,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 171.80997180643317,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 118.27890601853142,
+        "query_encode_ms_p50": 24.36737901007291,
+        "retrieval_ms_p50_topk100": 89.84252950176597,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -45958,11 +45958,11 @@
           "sparse": 39.62687400053255
         },
         "e2e_query_ms_p50": 89.79159999580588,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 144.83120466873515,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 89.79159999580588,
+        "query_encode_ms_p50": 22.406557996873744,
+        "retrieval_ms_p50_topk100": 67.38504199893214,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -46028,11 +46028,11 @@
           "sparse": 43.69587150722509
         },
         "e2e_query_ms_p50": 83.54584201151738,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 134.78615770647593,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 83.54584201151738,
+        "query_encode_ms_p50": 10.93791400489863,
+        "retrieval_ms_p50_topk100": 68.53893049992621,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -46098,11 +46098,11 @@
           "li": 50.16472599527333
         },
         "e2e_query_ms_p50": 84.89779000228737,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 93.73345321422676,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 84.89779000228737,
+        "query_encode_ms_p50": 35.83602300204802,
+        "retrieval_ms_p50_topk100": 49.06176700023934,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -46168,11 +46168,11 @@
           "li": 39.84997050429229
         },
         "e2e_query_ms_p50": 74.58303451130632,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 83.68840625196754,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 74.58303451130632,
+        "query_encode_ms_p50": 24.36737901007291,
+        "retrieval_ms_p50_topk100": 50.215655501233414,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -59881,11 +59881,11 @@
           "sparse": 11.482629997772165
         },
         "e2e_query_ms_p50": 31.500887984293513,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 50.28692188119747,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 31.500887984293513,
+        "query_encode_ms_p50": 14.622657487052493,
+        "retrieval_ms_p50_topk100": 16.87823049724102,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -59956,11 +59956,11 @@
           "sparse": 11.482629997772165
         },
         "e2e_query_ms_p50": 77.20712649461348,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 101.32847795874112,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 77.20712649461348,
+        "query_encode_ms_p50": 36.911808492732234,
+        "retrieval_ms_p50_topk100": 40.29531800188124,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -60032,11 +60032,11 @@
           "sparse": 12.486599494877737
         },
         "e2e_query_ms_p50": 64.88748949595902,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 89.87639286584451,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 64.88748949595902,
+        "query_encode_ms_p50": 25.641295476816595,
+        "retrieval_ms_p50_topk100": 43.14566949324217,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -60103,11 +60103,11 @@
           "sparse": 11.482629997772165
         },
         "e2e_query_ms_p50": 57.18886850809213,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 76.26751552656059,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 57.18886850809213,
+        "query_encode_ms_p50": 22.28915100567974,
+        "retrieval_ms_p50_topk100": 34.899717502412386,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -60173,11 +60173,11 @@
           "sparse": 12.486599494877737
         },
         "e2e_query_ms_p50": 49.79173399624415,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 64.81543043366398,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 49.79173399624415,
+        "query_encode_ms_p50": 11.018637989764102,
+        "retrieval_ms_p50_topk100": 37.75006899377331,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -60243,11 +60243,11 @@
           "li": 45.70623851031996
         },
         "e2e_query_ms_p50": 65.72449649684131,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 76.10251850972418,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 65.72449649684131,
+        "query_encode_ms_p50": 36.911808492732234,
+        "retrieval_ms_p50_topk100": 28.812688004109077,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -60313,11 +60313,11 @@
           "li": 37.30513450136641
         },
         "e2e_query_ms_p50": 52.40089000108128,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 64.65043341682758,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 52.40089000108128,
+        "query_encode_ms_p50": 25.641295476816595,
+        "retrieval_ms_p50_topk100": 31.663039495470002,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -67263,11 +67263,11 @@
           "sparse": 360.78744450060185
         },
         "e2e_query_ms_p50": 522.6670429983642,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 721.5942932729376,
         "latency_query_ids": [],
         "latency_sample_size": 50,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 522.6670429983642,
+        "query_encode_ms_p50": 14.36666349763982,
+        "retrieval_ms_p50_topk100": 508.3003795007244,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -67338,11 +67338,11 @@
           "sparse": 360.78744450060185
         },
         "e2e_query_ms_p50": 586.0558290005429,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 816.2764270105981,
         "latency_query_ids": [],
         "latency_sample_size": 50,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 586.0558290005429,
+        "query_encode_ms_p50": 36.26445400004741,
+        "retrieval_ms_p50_topk100": 549.7913750004955,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -67414,11 +67414,11 @@
           "sparse": 439.09477849229006
         },
         "e2e_query_ms_p50": 689.1354864928871,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 839.1961991121207,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 689.1354864928871,
+        "query_encode_ms_p50": 25.353669498144882,
+        "retrieval_ms_p50_topk100": 585.474483003054,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -67485,11 +67485,11 @@
           "sparse": 360.78744450060185
         },
         "e2e_query_ms_p50": 424.1762305027805,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 651.6921778063988,
         "latency_query_ids": [],
         "latency_sample_size": 50,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 424.1762305027805,
+        "query_encode_ms_p50": 21.897790502407588,
+        "retrieval_ms_p50_topk100": 402.27844000037294,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -67555,11 +67555,11 @@
           "sparse": 439.09477849229006
         },
         "e2e_query_ms_p50": 527.2558879951248,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 674.6119499079214,
         "latency_query_ids": [],
         "latency_sample_size": 50,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 527.2558879951248,
+        "query_encode_ms_p50": 10.987006000505062,
+        "retrieval_ms_p50_topk100": 437.9615480029315,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -67625,11 +67625,11 @@
           "li": 63.388786002178676
         },
         "e2e_query_ms_p50": 225.26838449994102,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 259.2663829418598,
         "latency_query_ids": [],
         "latency_sample_size": 50,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 225.26838449994102,
+        "query_encode_ms_p50": 36.26445400004741,
+        "retrieval_ms_p50_topk100": 189.0039304998936,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -67695,11 +67695,11 @@
           "li": 88.16110950283473
         },
         "e2e_query_ms_p50": 250.04070800059708,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 282.1861550433823,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 250.04070800059708,
+        "query_encode_ms_p50": 25.353669498144882,
+        "retrieval_ms_p50_topk100": 224.6870385024522,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -76360,11 +76360,11 @@
           "sparse": 174.32555599953048
         },
         "e2e_query_ms_p50": 234.4522130151745,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 374.2024541186403,
         "latency_query_ids": [],
         "latency_sample_size": 103,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 234.4522130151745,
+        "query_encode_ms_p50": 14.622515009250492,
+        "retrieval_ms_p50_topk100": 219.829698005924,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -76435,11 +76435,11 @@
           "sparse": 174.32555599953048
         },
         "e2e_query_ms_p50": 293.04801602847874,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 437.79963300796237,
         "latency_query_ids": [],
         "latency_sample_size": 103,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 293.04801602847874,
+        "query_encode_ms_p50": 36.955258023226634,
+        "retrieval_ms_p50_topk100": 256.0927580052521,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -76511,11 +76511,11 @@
           "sparse": 198.83578798908275
         },
         "e2e_query_ms_p50": 317.59596899792086,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 438.5109213439865,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 317.59596899792086,
+        "query_encode_ms_p50": 25.777828006539494,
+        "retrieval_ms_p50_topk100": 267.3079090018291,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -76582,11 +76582,11 @@
           "sparse": 174.32555599953048
         },
         "e2e_query_ms_p50": 232.92135901283473,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 376.1825729242993,
         "latency_query_ids": [],
         "latency_sample_size": 103,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 232.92135901283473,
+        "query_encode_ms_p50": 22.332743013976142,
+        "retrieval_ms_p50_topk100": 210.5886159988586,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -76652,11 +76652,11 @@
           "sparse": 198.83578798908275
         },
         "e2e_query_ms_p50": 257.46931198227685,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 376.89386126032343,
         "latency_query_ids": [],
         "latency_sample_size": 103,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 257.46931198227685,
+        "query_encode_ms_p50": 11.155312997289002,
+        "retrieval_ms_p50_topk100": 221.80376699543558,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -76722,11 +76722,11 @@
           "li": 58.59580301330425
         },
         "e2e_query_ms_p50": 118.72246002894826,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 125.21423897298519,
         "latency_query_ids": [],
         "latency_sample_size": 103,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 118.72246002894826,
+        "query_encode_ms_p50": 36.955258023226634,
+        "retrieval_ms_p50_topk100": 81.76720200572163,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -76792,11 +76792,11 @@
           "li": 58.6335239931941
         },
         "e2e_query_ms_p50": 118.76018100883812,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 125.92552730900934,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 118.76018100883812,
+        "query_encode_ms_p50": 25.777828006539494,
+        "retrieval_ms_p50_topk100": 92.98235300229862,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -83337,11 +83337,11 @@
           "sparse": 128.73892599600367
         },
         "e2e_query_ms_p50": 182.8274150029756,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 253.20278277387845,
         "latency_query_ids": [],
         "latency_sample_size": 103,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 182.8274150029756,
+        "query_encode_ms_p50": 14.33750701835379,
+        "retrieval_ms_p50_topk100": 168.48990798462182,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -83412,11 +83412,11 @@
           "sparse": 128.73892599600367
         },
         "e2e_query_ms_p50": 239.89993598661385,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 315.42678597732447,
         "latency_query_ids": [],
         "latency_sample_size": 103,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 239.89993598661385,
+        "query_encode_ms_p50": 36.70997900189832,
+        "retrieval_ms_p50_topk100": 203.18995698471554,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -83488,11 +83488,11 @@
           "sparse": 141.2610190018313
         },
         "e2e_query_ms_p50": 253.81504301913083,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 316.5731967080501,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 253.81504301913083,
+        "query_encode_ms_p50": 25.476225026068278,
+        "retrieval_ms_p50_topk100": 215.81672498723492,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -83559,11 +83559,11 @@
           "sparse": 128.73892599600367
         },
         "e2e_query_ms_p50": 185.81144697964191,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 258.6465130071156,
         "latency_query_ids": [],
         "latency_sample_size": 103,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 185.81144697964191,
+        "query_encode_ms_p50": 22.37247198354453,
+        "retrieval_ms_p50_topk100": 163.4389749960974,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -83629,11 +83629,11 @@
           "sparse": 141.2610190018313
         },
         "e2e_query_ms_p50": 199.72655401215889,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 259.7929237378412,
         "latency_query_ids": [],
         "latency_sample_size": 103,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 199.72655401215889,
+        "query_encode_ms_p50": 11.138718007714488,
+        "retrieval_ms_p50_topk100": 176.06574299861677,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -83699,11 +83699,11 @@
           "li": 57.07252098363824
         },
         "e2e_query_ms_p50": 111.16100999061018,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 119.00427617365494,
         "latency_query_ids": [],
         "latency_sample_size": 103,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 111.16100999061018,
+        "query_encode_ms_p50": 36.70997900189832,
+        "retrieval_ms_p50_topk100": 74.45103098871186,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -83769,11 +83769,11 @@
           "li": 58.465535010327585
         },
         "e2e_query_ms_p50": 112.55402401729953,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 120.15068690438056,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 112.55402401729953,
+        "query_encode_ms_p50": 25.476225026068278,
+        "retrieval_ms_p50_topk100": 87.07779899123125,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -91562,11 +91562,11 @@
           "sparse": 2963.124693487771
         },
         "e2e_query_ms_p50": 3334.8138774599647,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 4305.1439074240625,
         "latency_query_ids": [],
         "latency_sample_size": 142,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 3334.8138774599647,
+        "query_encode_ms_p50": 14.909095480106771,
+        "retrieval_ms_p50_topk100": 3319.904781979858,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -98142,11 +98142,11 @@
           "sparse": 128.69301400496624
         },
         "e2e_query_ms_p50": 192.4526159709785,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 273.2624289637897,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 192.4526159709785,
+        "query_encode_ms_p50": 14.771719987038523,
+        "retrieval_ms_p50_topk100": 177.68089598394,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -98217,11 +98217,11 @@
           "sparse": 128.69301400496624
         },
         "e2e_query_ms_p50": 249.59824996767566,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 336.25144697725773,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 249.59824996767566,
+        "query_encode_ms_p50": 37.093105987878516,
+        "retrieval_ms_p50_topk100": 212.50514397979714,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -98293,11 +98293,11 @@
           "sparse": 147.01875900209416
         },
         "e2e_query_ms_p50": 269.3475819687592,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 338.38171597744804,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 269.3475819687592,
+        "query_encode_ms_p50": 26.085273988428526,
+        "retrieval_ms_p50_topk100": 224.93656298320275,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -98364,11 +98364,11 @@
           "sparse": 128.69301400496624
         },
         "e2e_query_ms_p50": 185.8386480016634,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 269.3167480174452,
         "latency_query_ids": [],
         "latency_sample_size": 101,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 185.8386480016634,
+        "query_encode_ms_p50": 22.321386000839993,
+        "retrieval_ms_p50_topk100": 163.5172620008234,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -98434,11 +98434,11 @@
           "sparse": 147.01875900209416
         },
         "e2e_query_ms_p50": 205.58798000274692,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 271.4470170176355,
         "latency_query_ids": [],
         "latency_sample_size": 101,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 205.58798000274692,
+        "query_encode_ms_p50": 11.313554001390003,
+        "retrieval_ms_p50_topk100": 175.948681004229,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -98504,11 +98504,11 @@
           "li": 57.14563399669714
         },
         "e2e_query_ms_p50": 120.90523596270941,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 129.92371697328053,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 120.90523596270941,
+        "query_encode_ms_p50": 37.093105987878516,
+        "retrieval_ms_p50_topk100": 83.8121299748309,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -98574,11 +98574,11 @@
           "li": 58.56922100065276
         },
         "e2e_query_ms_p50": 122.32882296666503,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 132.05398597347084,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 122.32882296666503,
+        "query_encode_ms_p50": 26.085273988428526,
+        "retrieval_ms_p50_topk100": 96.2435489782365,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -105039,11 +105039,11 @@
           "sparse": 99.38903100555763
         },
         "e2e_query_ms_p50": 169.344722002279,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 324.27509705303237,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 169.344722002279,
+        "query_encode_ms_p50": 15.771077014505863,
+        "retrieval_ms_p50_topk100": 153.57364498777315,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -105114,11 +105114,11 @@
           "sparse": 99.38903100555763
         },
         "e2e_query_ms_p50": 226.87190197757445,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 403.16757606342435,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 226.87190197757445,
+        "query_encode_ms_p50": 38.295108010061085,
+        "retrieval_ms_p50_topk100": 188.57679396751337,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -105190,11 +105190,11 @@
           "sparse": 109.44578000635374
         },
         "e2e_query_ms_p50": 240.71329201979097,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 409.48694906546734,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 240.71329201979097,
+        "query_encode_ms_p50": 27.486909020808525,
+        "retrieval_ms_p50_topk100": 203.16963399818633,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -105261,11 +105261,11 @@
           "sparse": 99.38903100555763
         },
         "e2e_query_ms_p50": 156.91621098085307,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 309.03333000605926,
         "latency_query_ids": [],
         "latency_sample_size": 101,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 156.91621098085307,
+        "query_encode_ms_p50": 22.524030995555222,
+        "retrieval_ms_p50_topk100": 134.39217998529784,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -105331,11 +105331,11 @@
           "sparse": 109.44578000635374
         },
         "e2e_query_ms_p50": 170.75760102306958,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 315.35270300810225,
         "latency_query_ids": [],
         "latency_sample_size": 101,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 170.75760102306958,
+        "query_encode_ms_p50": 11.715832006302662,
+        "retrieval_ms_p50_topk100": 148.9850200159708,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -105401,11 +105401,11 @@
           "li": 57.52717997529544
         },
         "e2e_query_ms_p50": 127.48287097201683,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 173.02672506775707,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 127.48287097201683,
+        "query_encode_ms_p50": 38.295108010061085,
+        "retrieval_ms_p50_topk100": 89.18776296195574,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -105471,11 +105471,11 @@
           "li": 61.31182101671584
         },
         "e2e_query_ms_p50": 131.26751201343723,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 179.34609806980006,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 131.26751201343723,
+        "query_encode_ms_p50": 27.486909020808525,
+        "retrieval_ms_p50_topk100": 103.7806029926287,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -112448,11 +112448,11 @@
           "sparse": 399.972588988021
         },
         "e2e_query_ms_p50": 507.70474394084886,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 844.4602296606172,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 507.70474394084886,
+        "query_encode_ms_p50": 15.14238998061046,
+        "retrieval_ms_p50_topk100": 492.5623539602384,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -112523,11 +112523,11 @@
           "sparse": 399.972588988021
         },
         "e2e_query_ms_p50": 582.9394399479497,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 929.4757852097973,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 582.9394399479497,
+        "query_encode_ms_p50": 38.01636697608046,
+        "retrieval_ms_p50_topk100": 544.9230729718693,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -112599,11 +112599,11 @@
           "sparse": 469.99524800048675
         },
         "e2e_query_ms_p50": 677.7270049642539,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 952.4401709390804,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 677.7270049642539,
+        "query_encode_ms_p50": 26.940132986055687,
+        "retrieval_ms_p50_topk100": 580.7642129657324,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -112670,11 +112670,11 @@
           "sparse": 399.972588988021
         },
         "e2e_query_ms_p50": 475.2072849951219,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 814.1738086752594,
         "latency_query_ids": [],
         "latency_sample_size": 117,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 475.2072849951219,
+        "query_encode_ms_p50": 22.873976995470002,
+        "retrieval_ms_p50_topk100": 452.3333079996519,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -112740,11 +112740,11 @@
           "sparse": 469.99524800048675
         },
         "e2e_query_ms_p50": 569.994850011426,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 837.1381944045424,
         "latency_query_ids": [],
         "latency_sample_size": 117,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 569.994850011426,
+        "query_encode_ms_p50": 11.797743005445227,
+        "retrieval_ms_p50_topk100": 488.17444799351506,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -112810,11 +112810,11 @@
           "li": 75.23469600710087
         },
         "e2e_query_ms_p50": 182.9668509599287,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 200.3175320837181,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 182.9668509599287,
+        "query_encode_ms_p50": 38.01636697608046,
+        "retrieval_ms_p50_topk100": 144.95048398384824,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -112880,11 +112880,11 @@
           "li": 99.99960201093927
         },
         "e2e_query_ms_p50": 207.7317569637671,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 223.2819178130012,
         "latency_query_ids": [],
         "latency_sample_size": null,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 207.7317569637671,
+        "query_encode_ms_p50": 26.940132986055687,
+        "retrieval_ms_p50_topk100": 180.79162397771142,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -126225,11 +126225,11 @@
           "sparse": 47.73706250125542
         },
         "e2e_query_ms_p50": 68.29971200113505,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 157.4572184550925,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 68.29971200113505,
+        "query_encode_ms_p50": 12.996073521208018,
+        "retrieval_ms_p50_topk100": 92.67281749635004,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -126300,11 +126300,11 @@
           "sparse": 47.73706250125542
         },
         "e2e_query_ms_p50": 118.53827148934215,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 214.09256098821055,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 118.53827148934215,
+        "query_encode_ms_p50": 35.25528500904329,
+        "retrieval_ms_p50_topk100": 120.65216549672186,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -126376,11 +126376,11 @@
           "sparse": 49.24253599892836
         },
         "e2e_query_ms_p50": 107.38764699772219,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 201.37748469132927,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 107.38764699772219,
+        "query_encode_ms_p50": 23.795780522050336,
+        "retrieval_ms_p50_topk100": 119.63403600384481,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -126447,11 +126447,11 @@
           "sparse": 47.73706250125542
         },
         "e2e_query_ms_p50": 97.97562198946252,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 152.77412655035727,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 97.97562198946252,
+        "query_encode_ms_p50": 22.259211487835273,
+        "retrieval_ms_p50_topk100": 75.71641050162725,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -126517,11 +126517,11 @@
           "sparse": 49.24253599892836
         },
         "e2e_query_ms_p50": 86.82499749784256,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 140.05905025347602,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 86.82499749784256,
+        "query_encode_ms_p50": 10.799707000842318,
+        "retrieval_ms_p50_topk100": 74.6982810087502,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -126587,11 +126587,11 @@
           "li": 50.2385594882071
         },
         "e2e_query_ms_p50": 70.80120898808673,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 117.95377697097133,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 70.80120898808673,
+        "query_encode_ms_p50": 35.25528500904329,
+        "retrieval_ms_p50_topk100": 72.91510299546644,
         "status": "derived",
         "tokenize_ms_p50": null
       },
@@ -126657,11 +126657,11 @@
           "li": 37.5824614989142
         },
         "e2e_query_ms_p50": 58.145110998793825,
-        "e2e_query_ms_p99": null,
+        "e2e_query_ms_p99": 105.23870067409005,
         "latency_query_ids": [],
         "latency_sample_size": 200,
-        "query_encode_ms_p50": null,
-        "retrieval_ms_p50_topk100": 58.145110998793825,
+        "query_encode_ms_p50": 23.795780522050336,
+        "retrieval_ms_p50_topk100": 71.89697350258939,
         "status": "derived",
         "tokenize_ms_p50": null
       },
