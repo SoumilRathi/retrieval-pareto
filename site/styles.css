@@ -48,8 +48,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 15.5px;
-  line-height: 1.55;
+  font-size: 14.5px;
+  line-height: 1.48;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -122,8 +122,10 @@ select {
 }
 
 @media (min-width: 960px) {
+  .site-header-inner,
+  .hero,
   #leaderboard {
-    max-width: 1120px;
+    max-width: 1040px;
     margin-inline: auto;
   }
 }
@@ -225,30 +227,30 @@ select {
 /* === Main =============================================================== */
 
 main {
-  padding: 28px 0 64px;
+  padding: 22px 0 64px;
 }
 
 @media (min-width: 720px) {
   main {
-    padding: 40px 0 80px;
+    padding: 28px 0 72px;
   }
 }
 
 /* === Hero =============================================================== */
 
 .hero {
-  margin: 8px 0 36px;
+  margin: 6px 0 24px;
 }
 
 @media (min-width: 720px) {
   .hero {
-    margin: 24px 0 56px;
+    margin: 12px auto 30px;
   }
 }
 
 
 .eyebrow {
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   font-family: var(--mono);
   font-size: 11px;
   text-transform: uppercase;
@@ -258,12 +260,12 @@ main {
 }
 
 .hero h1 {
-  margin: 0 0 18px;
-  max-width: 820px;
+  margin: 0 0 12px;
+  max-width: 760px;
   font-family: var(--serif);
   font-weight: 450;
-  font-size: clamp(30px, 5.2vw, 52px);
-  line-height: 1.06;
+  font-size: clamp(28px, 4.5vw, 44px);
+  line-height: 1.04;
   letter-spacing: -0.018em;
   color: var(--ink);
   font-variation-settings: "opsz" 144, "SOFT" 100;
@@ -277,10 +279,10 @@ main {
 }
 
 .lede {
-  margin: 0 0 28px;
-  max-width: 640px;
-  font-size: 17px;
-  line-height: 1.55;
+  margin: 0 0 18px;
+  max-width: 610px;
+  font-size: 15.5px;
+  line-height: 1.48;
   color: var(--ink-soft);
 }
 
@@ -348,7 +350,7 @@ main {
   position: relative;
   display: flex;
   gap: 0;
-  margin-top: 32px;
+  margin-top: 18px;
   border-bottom: 1px solid var(--rule);
   overflow-x: auto;
   scrollbar-width: none;
@@ -365,8 +367,8 @@ main {
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
-  padding: 16px 0;
-  margin-right: 28px;
+  padding: 10px 0;
+  margin-right: 24px;
   background: transparent;
   border: 0;
   cursor: pointer;
@@ -414,7 +416,7 @@ main {
 .tab-name {
   font-family: var(--sans);
   font-weight: 600;
-  font-size: 17px;
+  font-size: 15.5px;
   letter-spacing: -0.005em;
   line-height: 1.1;
 }
@@ -434,24 +436,24 @@ main {
 /* === Benchmark intro ==================================================== */
 
 .benchmark-intro {
-  padding: 24px 0 8px;
+  padding: 12px 0 2px;
 }
 
 .benchmark-intro p {
   margin: 0;
   max-width: 640px;
   color: var(--ink-soft);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 14.5px;
+  line-height: 1.45;
 }
 
 .dataset-chips {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
-  margin-top: 18px;
-  min-height: 32px;
+  gap: 5px;
+  margin-top: 10px;
+  min-height: 26px;
 }
 
 .dataset-chips-label {
@@ -464,7 +466,7 @@ main {
 }
 
 .dataset-chips button {
-  padding: 6px 12px;
+  padding: 4px 10px;
   border: 1px solid var(--rule);
   background: transparent;
   color: var(--muted);
@@ -498,7 +500,7 @@ main {
 .filter-bar {
   display: grid;
   gap: 0;
-  margin: 28px 0 20px;
+  margin: 14px 0 10px;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
 }
@@ -511,7 +513,7 @@ main {
 
 .filter {
   position: relative;
-  padding: 14px 0;
+  padding: 10px 0;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -521,7 +523,7 @@ main {
 
 @media (min-width: 720px) {
   .filter {
-    padding: 16px 24px;
+    padding: 9px 18px;
     border-bottom: 0;
     border-right: 1px solid var(--rule);
   }
@@ -541,7 +543,7 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--muted);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   transition: color 120ms ease;
 }
 
@@ -555,7 +557,7 @@ main {
   background: transparent;
   border: 0;
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 14.5px;
   font-weight: 600;
   letter-spacing: -0.005em;
   color: var(--ink);
@@ -585,7 +587,7 @@ main {
   background: transparent;
   border: 0;
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 14.5px;
   font-weight: 600;
   letter-spacing: -0.005em;
   color: var(--ink);
@@ -725,12 +727,12 @@ main {
   background: transparent;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
-  padding: 22px 0 14px;
+  padding: 12px 0 8px;
 }
 
 @media (min-width: 720px) {
   .chart-shell {
-    padding: 28px 8px 18px;
+    padding: 13px 8px 9px;
   }
 }
 
@@ -740,15 +742,15 @@ main {
   align-items: baseline;
   flex-wrap: wrap;
   gap: 6px 16px;
-  margin-bottom: 14px;
-  padding-bottom: 12px;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
   border-bottom: 1px dashed var(--rule);
 }
 
 .chart-title {
   font-family: var(--sans);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14.5px;
   letter-spacing: -0.005em;
   color: var(--ink);
 }
@@ -756,12 +758,12 @@ main {
 .chart-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 12px;
   border-top: 1px dashed var(--rule);
-  margin-top: 10px;
-  padding-top: 14px;
+  margin-top: 4px;
+  padding-top: 7px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 0.05em;
   color: var(--muted);
 }
@@ -769,7 +771,7 @@ main {
 .chart-legend .swatch {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .chart-legend .swatch::before {
@@ -806,7 +808,7 @@ main {
 
 .plot {
   width: 100%;
-  height: clamp(340px, 43vh, 400px);
+  height: clamp(290px, 34vh, 340px);
   min-height: 0;
   /* Initial state for the structural-change crossfade. JS toggles
      `is-fading` to drop opacity before swapping the trace set, then
@@ -836,7 +838,7 @@ main {
 
 @media (min-width: 720px) {
   .plot {
-    height: clamp(360px, 43vh, 420px);
+    height: clamp(300px, 34vh, 355px);
   }
 }
 
