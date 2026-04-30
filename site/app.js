@@ -1257,7 +1257,7 @@ function aggregatedBreakdownHtml(row) {
     .slice()
     .sort((a, b) => (b.quality_selected ?? -Infinity) - (a.quality_selected ?? -Infinity))
     .map((u) => {
-      const lat = u.latency_ms != null ? `${formatNumber(u.latency_ms, 1)} ms` : "--";
+      const lat = u.latency_ms != null ? `${formatNumber(u.latency_ms, 1)} ms` : "latency unavailable";
       const q = formatMaybe(u.quality_selected, 3);
       return `<li><span class="label">${escapeHtml(u.dataset_label)}</span><span class="value">${q} · ${lat}</span></li>`;
     })
