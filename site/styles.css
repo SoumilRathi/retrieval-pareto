@@ -121,6 +121,13 @@ select {
   }
 }
 
+@media (min-width: 960px) {
+  #leaderboard {
+    max-width: 1120px;
+    margin-inline: auto;
+  }
+}
+
 /* === Header ============================================================ */
 
 .site-header {
@@ -799,7 +806,8 @@ main {
 
 .plot {
   width: 100%;
-  min-height: 360px;
+  height: clamp(340px, 43vh, 400px);
+  min-height: 0;
   /* Initial state for the structural-change crossfade. JS toggles
      `is-fading` to drop opacity before swapping the trace set, then
      clears it for the fade-back. Pure opacity, no spatial motion. */
@@ -828,7 +836,7 @@ main {
 
 @media (min-width: 720px) {
   .plot {
-    min-height: 440px;
+    height: clamp(360px, 43vh, 420px);
   }
 }
 
