@@ -724,6 +724,14 @@ function aggregateAcrossDatasets(rows) {
       latency_p99_ms: meanFinite(groupRows.map((r) => r.latency_p99_ms)),
       storage_gb: meanFinite(groupRows.map((r) => r.storage_gb)),
       cost_per_million_queries_usd: meanFinite(groupRows.map((r) => r.cost_per_million_queries_usd)),
+      latency: {
+        ...(first.latency || {}),
+        component_e2e_ms_p50: meanComponentMap(groupRows.map((r) => r.latency?.component_e2e_ms_p50)),
+      },
+      storage: {
+        ...(first.storage || {}),
+        component_index_bytes: meanComponentMap(groupRows.map((r) => r.storage?.component_index_bytes)),
+      },
       status: allCompleted ? "completed" : "quality_only",
       __aggregated: true,
       __underlying: groupRows,
@@ -745,6 +753,16 @@ function meanFinite(values) {
   const finite = values.filter((v) => isFiniteNumber(v));
   if (!finite.length) return null;
   return finite.reduce((sum, value) => sum + value, 0) / finite.length;
+}
+
+function meanComponentMap(maps) {
+  const keys = unique(maps.flatMap((map) => map && typeof map === "object" ? Object.keys(map) : []));
+  if (!keys.length) return null;
+  const out = {};
+  for (const key of keys) {
+    out[key] = meanFinite(maps.map((map) => map?.[key]));
+  }
+  return out;
 }
 
 function firstPresent(source, ...keys) {
@@ -1232,28 +1250,9 @@ function componentsSectionHtml(row) {
   if (row.family !== "hybrid" && row.family !== "sparse") return "";
   const latency = row.latency || {};
   const storage = row.storage || {};
-  const components = [];
-  if (latency.bm25_e2e_ms_p50 != null || storage.bm25_index_bytes != null) {
-    components.push({
-      label: "BM25",
-      e2e: latency.bm25_e2e_ms_p50,
-      bytes: storage.bm25_index_bytes,
-    });
-  }
-  if (latency.dense_e2e_ms_p50 != null || storage.dense_index_bytes != null) {
-    components.push({
-      label: "Dense",
-      e2e: latency.dense_e2e_ms_p50,
-      bytes: storage.dense_index_bytes,
-    });
-  }
-  if (latency.li_e2e_ms_p50 != null || storage.li_index_bytes != null) {
-    components.push({
-      label: "Late interaction",
-      e2e: latency.li_e2e_ms_p50,
-      bytes: storage.li_index_bytes,
-    });
-  }
+  const componentLatency = latency.component_e2e_ms_p50 || {};
+  const componentStorage = storage.component_index_bytes || {};
+  const components = componentRows(componentLatency, componentStorage, latency, storage);
   if (latency.fusion_ms_p50 != null) {
     components.push({
       label: "Fusion (RRF k=60)",
@@ -1278,6 +1277,36 @@ function componentsSectionHtml(row) {
       <ul class="drawer-rows">${rows}</ul>
     </section>
   `;
+}
+
+function componentRows(componentLatency, componentStorage, latency, storage) {
+  const labels = {
+    sparse: "BM25",
+    bm25: "BM25",
+    dense: "Dense",
+    li: "Late interaction",
+  };
+  const fallback = [
+    ["sparse", "BM25", "bm25_e2e_ms_p50", "bm25_index_bytes"],
+    ["dense", "Dense", "dense_e2e_ms_p50", "dense_index_bytes"],
+    ["li", "Late interaction", "li_e2e_ms_p50", "li_index_bytes"],
+  ];
+  const keys = unique([
+    ...Object.keys(componentLatency || {}),
+    ...Object.keys(componentStorage || {}),
+  ]);
+  const rows = keys.map((key) => ({
+    label: labels[key] || titleCase(key),
+    e2e: componentLatency?.[key],
+    bytes: componentStorage?.[key],
+  }));
+  for (const [key, label, latencyKey, storageKey] of fallback) {
+    if (keys.includes(key)) continue;
+    const e2e = latency?.[latencyKey];
+    const bytes = storage?.[storageKey];
+    if (e2e != null || bytes != null) rows.push({ label, e2e, bytes });
+  }
+  return rows;
 }
 
 function closeDrawer() {

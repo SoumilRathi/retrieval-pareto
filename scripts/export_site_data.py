@@ -106,6 +106,7 @@ def normalize_result(result: dict[str, Any], path: Path) -> dict[str, Any] | Non
             "tokenize_ms_p50": latency.get("tokenize_ms_p50"),
             "query_encode_ms_p50": latency.get("query_encode_ms_p50"),
             "retrieval_ms_p50_topk100": latency.get("retrieval_ms_p50_topk100"),
+            "component_e2e_ms_p50": latency.get("component_e2e_ms_p50"),
             "latency_sample_size": latency.get("latency_sample_size"),
             "latency_query_ids": latency.get("latency_query_ids"),
             "status": latency.get("status"),
@@ -117,6 +118,7 @@ def normalize_result(result: dict[str, Any], path: Path) -> dict[str, Any] | Non
             "index_bytes_int8": storage.get("index_bytes_int8"),
             "index_bytes_pq": storage.get("index_bytes_pq"),
             "index_bytes_backend": storage.get("index_bytes_backend"),
+            "component_index_bytes": storage.get("component_index_bytes"),
         },
         "cost": {
             "cost_per_million_queries_usd": (result.get("cost") or {}).get(
