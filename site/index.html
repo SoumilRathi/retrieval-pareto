@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Retrieval Pareto · quality, latency, and storage benchmark for retrieval systems</title>
+    <meta
+      name="description"
+      content="A production-oriented quality, latency, and storage benchmark for dense, sparse, late-interaction, and hybrid retrieval systems."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=magic22" />
+    <script defer src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <script defer src="app.js?v=magic22"></script>
+  </head>
+  <body>
+    <div class="cursor-light" aria-hidden="true"></div>
+    <canvas class="paper-grain" id="paperGrain" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <div class="shell site-header-inner">
+        <a class="brand" href="index.html" aria-label="Retrieval Pareto home">
+          <span class="brand-mark">Retrieval Pareto</span>
+          <span class="brand-tag">benchmark</span>
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+          <a href="#leaderboard">Leaderboard</a>
+          <a href="methodology.html">Methodology</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="hero" aria-labelledby="heroTitle">
+        <p class="eyebrow" data-rise="1">Quality · query latency · storage</p>
+        <h1 id="heroTitle" data-rise="2">
+          Which retriever sits on the <em>Pareto frontier</em>?
+        </h1>
+        <p class="lede" data-rise="3">
+          A production-oriented comparison of dense, late-interaction, and hybrid retrieval
+          systems across standard, reasoning-heavy, and separation benchmarks.
+        </p>
+        <p class="stat-line stat-line--leader" id="statLeader" data-rise="4"></p>
+      </section>
+
+      <section id="leaderboard" aria-label="Leaderboard">
+        <div class="benchmark-tabs" id="benchmarkTabs" role="tablist" aria-label="Benchmarks" data-rise="6"></div>
+
+        <div class="benchmark-intro" id="benchmarkIntro"></div>
+
+        <div class="filter-bar" role="group" aria-label="Chart filters">
+          <div class="filter">
+            <label for="metricSelect">Quality metric</label>
+            <select id="metricSelect">
+              <option value="ndcg_at_10">nDCG@10</option>
+              <option value="recall_at_100">Recall@100</option>
+              <option value="mrr_at_10">MRR@10</option>
+              <option value="map_at_100">MAP@100</option>
+            </select>
+          </div>
+          <div class="filter">
+            <label for="axisSelect">Compare against</label>
+            <select id="axisSelect">
+              <option value="latency">Query latency</option>
+              <option value="storage">Index size</option>
+            </select>
+          </div>
+          <div class="filter">
+            <label for="familySelect">Family</label>
+            <select id="familySelect"></select>
+          </div>
+        </div>
+
+        <div class="chart-shell" data-rise="6">
+          <div class="chart-caption">
+            <span class="chart-title" id="chartTitle">Quality vs. latency</span>
+          </div>
+          <div id="plot" class="plot" aria-label="Pareto chart"></div>
+          <div class="chart-legend" id="chartLegend" aria-hidden="true"></div>
+        </div>
+
+        <section class="frontier-strip" id="frontierStrip" aria-label="Pareto-optimal systems"></section>
+
+        <section class="systems-table-shell">
+          <div class="systems-toolbar">
+            <div class="systems-heading">
+              <h2>All measured systems</h2>
+            </div>
+            <span class="table-count" id="tableCount">--</span>
+          </div>
+          <div class="systems-table-wrap">
+            <table id="systemsTable" class="systems">
+              <thead>
+                <tr>
+                  <th data-sort="model_label">Model</th>
+                  <th data-sort="dataset_label">Dataset</th>
+                  <th data-sort="system_label">Backend</th>
+                  <th data-sort="quality_selected" class="num-col">Quality</th>
+                  <th data-sort="latency_ms" class="num-col">Query p50 ms</th>
+                  <th data-sort="storage_gb" class="num-col">Index GB</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <aside class="detail-drawer" id="detailDrawer" aria-live="polite" aria-hidden="true">
+      <button class="drawer-close" id="drawerClose" type="button" aria-label="Close detail panel">
+        <span>Close</span>
+        <span class="x" aria-hidden="true">×</span>
+      </button>
+      <div id="detailBody"></div>
+    </aside>
+
+    <footer class="site-footer">
+      <div class="shell site-footer-inner">
+        <span>Retrieval Pareto · 2026</span>
+        <div class="site-footer-links">
+          <a href="methodology.html">Methodology</a>
+          <a href="#leaderboard">Leaderboard</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

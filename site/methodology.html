@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Methodology · Retrieval Pareto</title>
+    <meta
+      name="description"
+      content="How model identity, retrieval backend, query latency, and storage are measured for the Retrieval Pareto benchmark."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=magic22" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell site-header-inner">
+        <a class="brand" href="index.html" aria-label="Retrieval Pareto home">
+          <span class="brand-mark">Retrieval Pareto</span>
+          <span class="brand-tag">methodology</span>
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+          <a href="index.html#leaderboard">Leaderboard</a>
+          <a href="methodology.html" aria-current="page">Methodology</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="method">
+      <p class="eyebrow" data-rise="1">Benchmark protocol</p>
+      <h1 data-rise="2">Model identity and retrieval backend, <em>measured separately</em>.</h1>
+
+      <h2>Quality</h2>
+      <p>
+        We report nDCG@10, Recall@100, MRR@10, and MAP@100 over the full query set for each
+        dataset.
+      </p>
+
+      <h2>Latency</h2>
+      <p>
+        Latency is end-to-end query latency at batch=1 on A100 40GB, p50 over a fixed 200-query
+        sample after 10 warmup queries. It includes tokenization and query preprocessing, the
+        query embedding forward pass, and the backend retrieval call for top-100. It excludes
+        corpus indexing, corpus embedding generation, index build, network or API overhead,
+        application-layer reranking, and disk cold-start.
+      </p>
+      <p>
+        We also store the encoding latency (<code>query_encode_ms_p50</code>) and the retrieval
+        latency (<code>retrieval_ms_p50_topk100</code>) as an additional breakdown.
+      </p>
+
+      <h2>Storage</h2>
+      <p>
+        We report index bytes for the serving index when a backend creates one, otherwise the
+        representation size. Compression variants — fp16, int8, binary+rerank, MUVERA, FastPLAID
+        — get their own row rather than asterisked footnotes.
+      </p>
+
+      <h2>Backends</h2>
+      <p>
+        Dense: flat (numpy BLAS matmul), HNSW (hnswlib, <code>M=32</code>, <code>ef_search=128</code> — high recall), OPQ-IVF-PQ, RaBitQ, ScaNN, binary rerank.<br />
+        Late-interaction: exact MaxSim, FastPlaid, MUVERA.<br />
+        Sparse baseline: BM25 (Pyserini / Anserini).<br />
+        Hybrid rows compose two or three of the above as first-stage retrievers.
+      </p>
+      <p>
+        For corpora up to ~171k documents, exact contiguous flat search can outperform
+        high-recall HNSW because graph traversal overhead dominates the BLAS matmul.
+      </p>
+
+      <h2>Hybrid fusion</h2>
+      <p>
+        Hybrid rows fuse component run lists with Reciprocal Rank Fusion at <code>k=60</code>.
+        Each component contributes a top-1000 run list; the fused list is evaluated at top-100.
+        We use one representative dense model and one representative late-interaction model per
+        hybrid row, so the comparison reads as BM25 / dense / LI / hybrid rather than a
+        fusion-weight grid.
+      </p>
+
+      <h2>Hybrid latency</h2>
+      <p>
+        Hybrid <code>p50 e2e</code> is calculated based on this formula:
+        <code>max(component p50) + fusion_ms</code>. This matches how production hybrids serve
+        (components dispatch concurrently and then merge). We also store serial latency
+        (<code>sum(component p50) + fusion_ms</code>) and per-component latencies, both visible
+        in the row detail panel.
+      </p>
+
+      <h2>Applicability</h2>
+      <p>
+        We skip configurations that would mislead at small scale — OPQ-IVF-PQ doesn't run on
+        corpora below ~10k documents, where the index is under-trained. Skipped rows don't
+        appear on the leaderboard. Rows marked <em>quality only</em> have nDCG and recall but no
+        latency, usually because the backend variant exists for storage tradeoffs rather than
+        serving.
+      </p>
+
+      <h2 id="best-balance">Best balance</h2>
+      <p>
+        Best balance is the knee point of the Pareto frontier. We normalise both axes to
+        <code>[0, 1]</code>, draw a chord from the cheapest frontier member to the highest-quality
+        one, and pick the frontier system with the largest perpendicular distance above that
+        chord. That's where the curve bends: where adding cost stops buying proportional quality.
+      </p>
+
+      <hr class="method-divider" />
+
+      <h2>Result logs</h2>
+      <p>
+        Per-row JSON for every measured configuration lives in <code>results/</code>.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer-inner">
+        <span>Retrieval Pareto · 2026</span>
+        <div class="site-footer-links">
+          <a href="index.html">Leaderboard</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

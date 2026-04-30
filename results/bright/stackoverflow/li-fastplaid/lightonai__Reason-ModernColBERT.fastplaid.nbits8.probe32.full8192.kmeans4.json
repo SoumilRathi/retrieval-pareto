@@ -1,0 +1,52 @@
+{
+  "benchmark_protocol": {
+    "note": "FastPlaid full8192 did not fit on the A100 latency hardware; explicit deployment/OOM gap, not a completed score."
+  },
+  "cost": {},
+  "dataset": {
+    "benchmark": "bright",
+    "name": "stackoverflow",
+    "split": "test"
+  },
+  "latency": {
+    "e2e_query_ms_p50": null,
+    "serving_batch_1_status": "oom",
+    "status": "oom"
+  },
+  "model": {
+    "family": "late_interaction",
+    "id": "lightonai/Reason-ModernColBERT",
+    "license": null,
+    "max_seq_length": 512,
+    "params_m": null,
+    "precision": "fp16",
+    "revision": null,
+    "search_mode": "fastplaid"
+  },
+  "quality": {
+    "map_at_100": null,
+    "mrr_at_10": null,
+    "ndcg_at_10": null,
+    "recall_at_100": null
+  },
+  "retrieval_system": {
+    "backend": "fastplaid",
+    "compression": "plaid-8bit",
+    "exact": false,
+    "family": "late_interaction",
+    "name": "li-fastplaid",
+    "params": {
+      "kmeans_niters": 4,
+      "n_full_scores": 8192,
+      "n_ivf_probe": 32,
+      "nbits": 8
+    },
+    "search_mode": "fastplaid"
+  },
+  "run": {
+    "marked_oom_at": "2026-04-30T14:55:48.568033+00:00"
+  },
+  "schema_version": "0.3",
+  "status": "backend_oom_full8192_a100",
+  "storage": {}
+}

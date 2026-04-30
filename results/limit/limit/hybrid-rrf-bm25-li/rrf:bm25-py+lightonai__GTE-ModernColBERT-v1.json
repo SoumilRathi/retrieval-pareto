@@ -1,0 +1,100 @@
+{
+  "benchmark_protocol": {
+    "component_rankings": "existing sidecars or generated from cached embeddings without overwriting aggregate component JSON",
+    "fusion": "rrf-k60",
+    "latency_note": "Hybrid latency is a conservative sequential sum of available component p50 latencies; quality is computed from fused top-100 rankings.",
+    "latency_sample_seed": 13,
+    "latency_sample_size": 200
+  },
+  "cost": {
+    "cost_per_million_docs_indexed_usd": null,
+    "cost_per_million_queries_usd": 54.15874659973067,
+    "pricing_source": "https://lambda.ai/pricing",
+    "reference_gpu_hardware": "Lambda A100 SXM 40GB",
+    "reference_gpu_hourly_usd": 1.99
+  },
+  "dataset": {
+    "benchmark": "limit",
+    "corpus_rows": 50000,
+    "id": "orionweller/LIMIT",
+    "name": "limit",
+    "qrels_rows": 2000,
+    "query_limit": null,
+    "query_rows": 1000,
+    "split": "test"
+  },
+  "index": {
+    "backend_index_status": "postprocess",
+    "search_mode": "hybrid-rrf-bm25-li"
+  },
+  "latency": {
+    "component_e2e_ms_p50": {
+      "li": 50.2385594882071,
+      "sparse": 47.73706250125542
+    },
+    "e2e_query_ms_p50": 97.97562198946252,
+    "e2e_query_ms_p99": null,
+    "latency_query_ids": [],
+    "latency_sample_seed": 13,
+    "latency_sample_size": 200,
+    "query_encode_ms_p50": null,
+    "query_encode_ms_p99": null,
+    "retrieval_ms_p50_topk100": 97.97562198946252,
+    "retrieval_ms_p99_topk100": null,
+    "status": "derived"
+  },
+  "model": {
+    "family": "hybrid",
+    "id": "rrf:bm25-py+lightonai/GTE-ModernColBERT-v1",
+    "license": null,
+    "max_seq_length": null,
+    "params_m": null,
+    "precision": "component-dependent",
+    "revision": null,
+    "search_mode": "hybrid-rrf-bm25-li",
+    "truncate_dim": null
+  },
+  "quality": {
+    "map_at_100": 0.9243687980743248,
+    "mrr_at_10": 0.9426242063492065,
+    "ndcg_at_10": 0.9373119056583347,
+    "recall_at_100": 0.9915
+  },
+  "retrieval_system": {
+    "backend": "rrf-postprocess",
+    "compression": "rrf-k60",
+    "exact": false,
+    "family": "hybrid",
+    "name": "hybrid-rrf-bm25-li",
+    "params": {
+      "components": [
+        "sparse",
+        "li"
+      ],
+      "dense_model": null,
+      "dense_system": null,
+      "li_model": "lightonai/GTE-ModernColBERT-v1",
+      "li_system": "li-fastplaid",
+      "rrf_k": 60
+    },
+    "search_mode": "hybrid-rrf-bm25-li"
+  },
+  "run": {
+    "created_at": "2026-04-29T13:28:53.803430+00:00",
+    "git_sha": null,
+    "hardware_label": "postprocess"
+  },
+  "schema_version": "0.3",
+  "storage": {
+    "component_index_bytes": {
+      "li": 2026845691,
+      "sparse": 27056752
+    },
+    "index_bytes_backend": 2053902443,
+    "index_bytes_fp16": 2053902443,
+    "index_bytes_int8": 1026951221,
+    "index_bytes_per_doc": 41078.04886,
+    "index_bytes_pq": null
+  },
+  "system": {}
+}

@@ -1,0 +1,102 @@
+{
+  "benchmark_protocol": {
+    "component_rankings": "existing sidecars or generated from cached embeddings without overwriting aggregate component JSON",
+    "fusion": "rrf-k60",
+    "latency_note": "Hybrid latency is a conservative sequential sum of available component p50 latencies; quality is computed from fused top-100 rankings.",
+    "note": "Hybrid latency unavailable because at least one component latency was unavailable or intentionally OOM; quality metrics are preserved."
+  },
+  "cost": {
+    "cost_per_million_docs_indexed_usd": null,
+    "cost_per_million_queries_usd": null,
+    "pricing_source": "https://lambda.ai/pricing",
+    "reference_gpu_hardware": "Lambda A100 SXM 40GB",
+    "reference_gpu_hourly_usd": 1.99
+  },
+  "dataset": {
+    "benchmark": "bright",
+    "corpus_rows": 50220,
+    "id": "xlangai/BRIGHT",
+    "name": "economics",
+    "qrels_rows": 800,
+    "query_limit": null,
+    "query_rows": 103,
+    "split": "economics"
+  },
+  "index": {
+    "backend_index_status": "postprocess",
+    "search_mode": "hybrid-rrf-bm25-dense-li"
+  },
+  "latency": {
+    "component_e2e_ms_p50": {
+      "dense": null,
+      "li": 58.465535010327585,
+      "sparse": 141.2610190018313
+    },
+    "e2e_query_ms_p50": null,
+    "e2e_query_ms_p99": null,
+    "latency_query_ids": [],
+    "latency_sample_size": null,
+    "query_encode_ms_p50": null,
+    "query_encode_ms_p99": null,
+    "retrieval_ms_p50_topk100": null,
+    "retrieval_ms_p99_topk100": null,
+    "status": "component_latency_unavailable"
+  },
+  "model": {
+    "family": "hybrid",
+    "id": "rrf:bm25-py+BAAI/bge-large-en-v1.5+mixedbread-ai/mxbai-edge-colbert-v0-32m",
+    "license": null,
+    "max_seq_length": null,
+    "params_m": null,
+    "precision": "component-dependent",
+    "revision": null,
+    "search_mode": "hybrid-rrf-bm25-dense-li",
+    "truncate_dim": null
+  },
+  "quality": {
+    "map_at_100": 0.14583288413792783,
+    "mrr_at_10": 0.2189012174449067,
+    "ndcg_at_10": 0.1904455081525366,
+    "recall_at_100": 0.49554367769104807
+  },
+  "retrieval_system": {
+    "backend": "rrf-postprocess",
+    "compression": "rrf-k60",
+    "exact": false,
+    "family": "hybrid",
+    "name": "hybrid-rrf-bm25-dense-li",
+    "params": {
+      "components": [
+        "sparse",
+        "dense",
+        "li"
+      ],
+      "dense_model": "BAAI/bge-large-en-v1.5",
+      "dense_system": "dense-hnsw",
+      "li_model": "mixedbread-ai/mxbai-edge-colbert-v0-32m",
+      "li_system": "li-fastplaid",
+      "rrf_k": 60
+    },
+    "search_mode": "hybrid-rrf-bm25-dense-li"
+  },
+  "run": {
+    "created_at": "2026-04-28T05:47:13.920932+00:00",
+    "git_sha": null,
+    "hardware_label": "postprocess"
+  },
+  "schema_version": "0.3",
+  "status": "component_latency_unavailable",
+  "storage": {
+    "component_index_bytes": {
+      "dense": 219569352,
+      "li": 584836144,
+      "sparse": 14876496
+    },
+    "index_bytes_backend": 819281992,
+    "index_bytes_fp16": 819281992,
+    "index_bytes_int8": 409640996,
+    "index_bytes_per_doc": 16313.85886101155,
+    "index_bytes_pq": null
+  },
+  "system": {}
+}

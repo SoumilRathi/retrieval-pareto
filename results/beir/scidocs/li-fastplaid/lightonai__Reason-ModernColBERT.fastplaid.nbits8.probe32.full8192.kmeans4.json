@@ -1,0 +1,156 @@
+{
+  "benchmark_protocol": {
+    "cache_only": false,
+    "corpus_encode_batch": "32",
+    "gpu_hourly_usd": 1.99,
+    "gpu_price_label": "Lambda A100 SXM 40GB",
+    "gpu_pricing_source": "https://lambda.ai/pricing",
+    "index_residency": "warm in process memory/page cache before timed retrieval",
+    "latency_sample_seed": 13,
+    "latency_sample_size": 200,
+    "latency_samples": 0,
+    "latency_skipped": true,
+    "latency_warmup": 0,
+    "max_feasible_batch_candidates": "1,2,4,8,16,32",
+    "max_seq_length": null,
+    "note": "FastPlaid full8192 did not fit on the A100 latency hardware; explicit deployment/OOM gap, not a completed score.",
+    "precision": "auto",
+    "serving_latency_batch_sizes": "1"
+  },
+  "cost": {
+    "cost_per_million_docs_indexed_usd": 3.068491934228912,
+    "cost_per_million_queries_usd": null,
+    "pricing_source": "https://lambda.ai/pricing",
+    "reference_gpu_hardware": "Lambda A100 SXM 40GB",
+    "reference_gpu_hourly_usd": 1.99
+  },
+  "dataset": {
+    "benchmark": "beir",
+    "corpus_rows": 25657,
+    "id": "mteb/scidocs",
+    "name": "scidocs",
+    "qrels_rows": 4928,
+    "query_limit": null,
+    "query_rows": 1000,
+    "split": "test"
+  },
+  "index": {
+    "device": "cuda",
+    "muvera_candidates": null,
+    "muvera_dim_proj": null,
+    "muvera_index_status": null,
+    "muvera_k_sim": null,
+    "muvera_r_reps": null,
+    "muvera_size_bytes": null,
+    "plaid_index_path": "indexes/beir/scidocs/lightonai__Reason-ModernColBERT.fastplaid.nbits8.probe32.full8192.kmeans4",
+    "plaid_index_status": "built",
+    "plaid_n_full_scores": 8192,
+    "plaid_n_ivf_probe": 32,
+    "plaid_nbits": 8,
+    "search_mode": "plaid"
+  },
+  "latency": {
+    "corpus_encode_batch_candidates": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "corpus_encode_batch_mode": "fixed",
+    "corpus_encode_batch_size": 32,
+    "corpus_encode_ms_total": 142423.05085600013,
+    "corpus_load_ms_total": 0.0,
+    "docs_indexed_per_second": 180.14640078129668,
+    "e2e_query_ms_p50": null,
+    "index_prepare_ms_total": 14556.909599999926,
+    "latency_query_ids": [],
+    "latency_sample_seed": 13,
+    "latency_sample_size": 0,
+    "max_seq_length": null,
+    "precision": "auto",
+    "query_encode_ms_p50": null,
+    "query_encode_ms_p50_batch32": null,
+    "query_encode_ms_p99": null,
+    "query_encode_ms_total": 919.7235619999446,
+    "query_load_ms_total": 0.0,
+    "retrieval_ms_p50_topk100": null,
+    "retrieval_ms_p99_topk100": null,
+    "retrieval_ms_total": 82521.76211300002,
+    "serving_batch_1_status": "oom",
+    "skip_reason": "parallel_quality_storage_pass",
+    "status": "oom"
+  },
+  "model": {
+    "family": "late_interaction",
+    "id": "lightonai/Reason-ModernColBERT",
+    "license": null,
+    "max_seq_length": null,
+    "params_m": null,
+    "precision": "auto",
+    "revision": null,
+    "search_mode": "plaid",
+    "truncate_dim": null
+  },
+  "quality": {
+    "map_at_100": 0.134208676519504,
+    "mrr_at_10": 0.32563174603174594,
+    "ndcg_at_10": 0.18996747248881257,
+    "recall_at_100": 0.4627999999999995
+  },
+  "retrieval_system": {
+    "backend": "pylate-fastplaid",
+    "compression": "plaid-pq",
+    "exact": false,
+    "family": "late_interaction",
+    "name": "li-fastplaid",
+    "params": {
+      "kmeans_niters": 4,
+      "n_full_scores": 8192,
+      "n_ivf_probe": 32,
+      "nbits": 8,
+      "use_fast": true
+    },
+    "search_mode": "plaid"
+  },
+  "run": {
+    "cache": {
+      "corpus": {
+        "enabled": true,
+        "hit": false,
+        "key": "69173698433fc7f49e0dcbe1",
+        "path": "data/cache/late_interaction/corpus/69173698433fc7f49e0dcbe1.npz"
+      },
+      "queries": {
+        "enabled": true,
+        "hit": false,
+        "key": "5567b4da6018cc122191e727",
+        "path": "data/cache/late_interaction/queries/5567b4da6018cc122191e727.npz"
+      }
+    },
+    "created_at": "2026-04-29T03:47:02.761545+00:00",
+    "git_sha": null,
+    "hardware_label": "cuda",
+    "marked_oom_at": "2026-04-30T14:55:48.568033+00:00",
+    "rankings_path": "results/beir/scidocs/li-fastplaid/lightonai__Reason-ModernColBERT.fastplaid.nbits8.probe32.full8192.kmeans4.rankings.json"
+  },
+  "schema_version": "0.3",
+  "status": "backend_oom_full8192_a100",
+  "storage": {
+    "index_bytes_fp16": 1377089024,
+    "index_bytes_int8": 688544512,
+    "index_bytes_per_doc": 53673.03363604475,
+    "index_bytes_pq": 1502620329
+  },
+  "system": {
+    "cuda_available": true,
+    "mps_available": false,
+    "peak_index_ram_gb": null,
+    "peak_serving_ram_gb": null,
+    "platform": "Linux-6.8.0-1046-nvidia-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "ram_total_gb": 237.490827264,
+    "torch": "2.9.0+cu128"
+  }
+}

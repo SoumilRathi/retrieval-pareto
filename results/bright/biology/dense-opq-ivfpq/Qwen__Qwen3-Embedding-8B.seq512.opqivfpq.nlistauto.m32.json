@@ -1,0 +1,114 @@
+{
+  "benchmark_protocol": {
+    "cache_only": true,
+    "corpus_encode_batch": "128",
+    "gpu_hourly_usd": 1.99,
+    "gpu_price_label": "Lambda A100 SXM 40GB",
+    "gpu_pricing_source": "https://lambda.ai/pricing",
+    "index_residency": null,
+    "latency_sample_seed": 13,
+    "latency_sample_size": 200,
+    "latency_samples": 200,
+    "latency_skipped": true,
+    "latency_warmup": 10,
+    "max_feasible_batch_candidates": "1,2,4,8,16,32,64,128",
+    "max_seq_length": 512,
+    "note": "Qwen3-Embedding-8B full-dimension OPQ-IVF-PQ is skipped because OPQ construction is compute-dominated at 4096 dimensions; Qwen8 flat, HNSW, RaBitQ, and binary-rerank remain in scope, and Qwen8 OPQ is still evaluated for lower Matryoshka dimensions.",
+    "precision": "fp16",
+    "serving_latency_batch_sizes": "1"
+  },
+  "cost": {
+    "cost_per_million_docs_indexed_usd": null,
+    "cost_per_million_queries_usd": null,
+    "hardware_hourly_usd": 1.99,
+    "hardware_label": "Lambda A100 SXM 40GB",
+    "pricing_source": "https://lambda.ai/pricing"
+  },
+  "dataset": {
+    "benchmark": "bright",
+    "corpus_rows": 57359,
+    "id": "xlangai/BRIGHT",
+    "name": "biology",
+    "qrels_rows": 372,
+    "query_limit": null,
+    "query_rows": 103,
+    "split": "biology"
+  },
+  "index": {
+    "backend_index_spec": null,
+    "backend_index_status": "skipped_high_dim_opq_compute",
+    "search_mode": "opq_ivf_pq",
+    "skipped_model": "Qwen/Qwen3-Embedding-8B"
+  },
+  "latency": {
+    "e2e_query_ms_p50": null,
+    "skip_reason": "Qwen3-Embedding-8B full-dimension OPQ-IVF-PQ is skipped because OPQ construction is compute-dominated at 4096 dimensions; Qwen8 flat, HNSW, RaBitQ, and binary-rerank remain in scope, and Qwen8 OPQ is still evaluated for lower Matryoshka dimensions."
+  },
+  "model": {
+    "family": "dense",
+    "id": "Qwen/Qwen3-Embedding-8B",
+    "license": null,
+    "max_seq_length": 512,
+    "params_m": null,
+    "precision": "fp16",
+    "revision": null,
+    "search_mode": "opq_ivf_pq",
+    "truncate_dim": null
+  },
+  "quality": {
+    "map_at_100": null,
+    "mrr_at_10": null,
+    "ndcg_at_10": null,
+    "recall_at_100": null
+  },
+  "retrieval_system": {
+    "backend": "faiss-opq-ivf-pq",
+    "compression": "opq-ivf-pq",
+    "exact": false,
+    "family": "dense",
+    "name": "dense-opq-ivfpq",
+    "params": {
+      "nlist": "auto",
+      "pq_m": 32
+    },
+    "search_mode": "opq_ivf_pq"
+  },
+  "run": {
+    "cache": {
+      "corpus": {
+        "enabled": false,
+        "hit": false,
+        "key": null,
+        "path": null
+      },
+      "queries": {
+        "enabled": false,
+        "hit": false,
+        "key": null,
+        "path": null
+      }
+    },
+    "created_at": "2026-04-27T09:59:46.010159+00:00",
+    "git_sha": null,
+    "hardware_label": "cuda"
+  },
+  "schema_version": "0.3",
+  "skip_reason": "Qwen3-Embedding-8B full-dimension OPQ-IVF-PQ is skipped because OPQ construction is compute-dominated at 4096 dimensions; Qwen8 flat, HNSW, RaBitQ, and binary-rerank remain in scope, and Qwen8 OPQ is still evaluated for lower Matryoshka dimensions.",
+  "status": "skipped_high_dim_opq_compute",
+  "storage": {
+    "index_bytes_fp16": null,
+    "index_bytes_int8": null,
+    "index_bytes_per_doc": null,
+    "index_bytes_pq": null
+  },
+  "system": {
+    "cuda_available": true,
+    "mps_available": false,
+    "peak_index_ram_gb": null,
+    "peak_serving_ram_gb": null,
+    "platform": "Linux-6.8.0-1046-nvidia-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "ram_total_gb": 232.20559872,
+    "torch": "2.9.0+cu128"
+  }
+}

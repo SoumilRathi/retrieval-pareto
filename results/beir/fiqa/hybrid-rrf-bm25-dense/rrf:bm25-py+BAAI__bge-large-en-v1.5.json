@@ -1,0 +1,100 @@
+{
+  "benchmark_protocol": {
+    "component_rankings": "existing sidecars or generated from cached embeddings without overwriting aggregate component JSON",
+    "fusion": "rrf-k60",
+    "latency_note": "Hybrid latency is a conservative sequential sum of available component p50 latencies; quality is computed from fused top-100 rankings.",
+    "latency_sample_seed": 13,
+    "latency_sample_size": 200
+  },
+  "cost": {
+    "cost_per_million_docs_indexed_usd": null,
+    "cost_per_million_queries_usd": 95.91015192575773,
+    "pricing_source": "https://lambda.ai/pricing",
+    "reference_gpu_hardware": "Lambda A100 SXM 40GB",
+    "reference_gpu_hourly_usd": 1.99
+  },
+  "dataset": {
+    "benchmark": "beir",
+    "corpus_rows": 57638,
+    "id": "mteb/fiqa",
+    "name": "fiqa",
+    "qrels_rows": 1706,
+    "query_limit": null,
+    "query_rows": 648,
+    "split": "test"
+  },
+  "index": {
+    "backend_index_status": "postprocess",
+    "search_mode": "hybrid-rrf-bm25-dense"
+  },
+  "latency": {
+    "component_e2e_ms_p50": {
+      "dense": 65.26637099159416,
+      "sparse": 108.23943148716353
+    },
+    "e2e_query_ms_p50": 173.5058024787577,
+    "e2e_query_ms_p99": null,
+    "latency_query_ids": [],
+    "latency_sample_seed": 13,
+    "latency_sample_size": 200,
+    "query_encode_ms_p50": null,
+    "query_encode_ms_p99": null,
+    "retrieval_ms_p50_topk100": 173.5058024787577,
+    "retrieval_ms_p99_topk100": null,
+    "status": "derived"
+  },
+  "model": {
+    "family": "hybrid",
+    "id": "rrf:bm25-py+BAAI/bge-large-en-v1.5",
+    "license": null,
+    "max_seq_length": null,
+    "params_m": null,
+    "precision": "component-dependent",
+    "revision": null,
+    "search_mode": "hybrid-rrf-bm25-dense",
+    "truncate_dim": null
+  },
+  "quality": {
+    "map_at_100": 0.3222126819244021,
+    "mrr_at_10": 0.453730648638056,
+    "ndcg_at_10": 0.3793681636666472,
+    "recall_at_100": 0.7395011324409476
+  },
+  "retrieval_system": {
+    "backend": "rrf-postprocess",
+    "compression": "rrf-k60",
+    "exact": false,
+    "family": "hybrid",
+    "name": "hybrid-rrf-bm25-dense",
+    "params": {
+      "components": [
+        "sparse",
+        "dense"
+      ],
+      "dense_model": "BAAI/bge-large-en-v1.5",
+      "dense_system": "dense-hnsw",
+      "li_model": null,
+      "li_system": null,
+      "rrf_k": 60
+    },
+    "search_mode": "hybrid-rrf-bm25-dense"
+  },
+  "run": {
+    "created_at": "2026-04-29T13:14:42.209000+00:00",
+    "git_sha": null,
+    "hardware_label": "postprocess"
+  },
+  "schema_version": "0.3",
+  "storage": {
+    "component_index_bytes": {
+      "dense": 252001800,
+      "sparse": 35594989
+    },
+    "index_bytes_backend": 287596789,
+    "index_bytes_fp16": 287596789,
+    "index_bytes_int8": 143798394,
+    "index_bytes_per_doc": 4989.707987785836,
+    "index_bytes_pq": null
+  },
+  "system": {}
+}
