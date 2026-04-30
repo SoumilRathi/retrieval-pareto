@@ -134,9 +134,7 @@ def normalize_result(result: dict[str, Any], path: Path) -> dict[str, Any] | Non
             "hardware": (result.get("run") or {}).get("hardware_label")
             or (result.get("system") or {}).get("platform")
             or "unknown",
-            "precision": (result.get("run") or {}).get("precision")
-            or result.get("precision")
-            or "unknown",
+            "precision": pick_precision(result, model, latency),
             "latency_policy": "latency skipped"
             if latency.get("status") == "skipped"
             else "batch=1 isolated when measured",
@@ -201,6 +199,13 @@ def backfill_hybrid_components(rows: list[dict[str, Any]]) -> None:
             row["latency"]["status"] = "derived"
             row["status"] = "completed"
 
+            component_samples = [
+                (component_rows.get(name, {}).get("latency") or {}).get("latency_sample_size")
+                for name in required
+            ]
+            if all(is_number(value) for value in component_samples):
+                row["latency"]["latency_sample_size"] = int(min(component_samples))
+
         component_p99 = [
             (component_rows.get(name, {}).get("latency") or {}).get("e2e_query_ms_p99")
             for name in required
@@ -245,6 +250,21 @@ def first_present(source: dict[str, Any], *keys: str) -> Any:
         if value is not None:
             return value
     return None
+
+
+def pick_precision(result: dict[str, Any], model: dict[str, Any], latency: dict[str, Any]) -> str:
+    for source in (
+        result.get("run") or {},
+        latency,
+        model,
+        result.get("system") or {},
+        result.get("retrieval_system") or {},
+    ):
+        value = source.get("precision")
+        if value:
+            return str(value)
+    value = result.get("precision")
+    return str(value) if value else "unknown"
 
 
 def pick_index_bytes(storage: dict[str, Any]) -> int | float | None:

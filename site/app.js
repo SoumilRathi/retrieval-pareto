@@ -713,6 +713,10 @@ function aggregateAcrossDatasets(rows) {
     const count = unique(groupRows.map((row) => row.dataset)).length;
     const aggregatedQuality = aggregateQuality(groupRows);
     const allCompleted = groupRows.every((r) => r.status === "completed");
+    const latencyP50 = meanFinite(groupRows.map((r) => r.latency_ms));
+    const latencyP99 = meanFinite(groupRows.map((r) => r.latency_p99_ms));
+    const encodeP50 = meanFinite(groupRows.map((r) => r.latency?.query_encode_ms_p50));
+    const retrieveP50 = meanFinite(groupRows.map((r) => r.latency?.retrieval_ms_p50_topk100));
     return {
       ...first,
       id: `agg:${first.benchmark}:${first.family}:${first.model_id}:${first.system}`,
@@ -720,12 +724,16 @@ function aggregateAcrossDatasets(rows) {
       dataset_label: "",
       quality: aggregatedQuality,
       quality_selected: aggregatedQuality[state.metric] ?? null,
-      latency_ms: meanFinite(groupRows.map((r) => r.latency_ms)),
-      latency_p99_ms: meanFinite(groupRows.map((r) => r.latency_p99_ms)),
+      latency_ms: latencyP50,
+      latency_p99_ms: latencyP99,
       storage_gb: meanFinite(groupRows.map((r) => r.storage_gb)),
       cost_per_million_queries_usd: meanFinite(groupRows.map((r) => r.cost_per_million_queries_usd)),
       latency: {
         ...(first.latency || {}),
+        e2e_query_ms_p50: latencyP50,
+        e2e_query_ms_p99: latencyP99,
+        query_encode_ms_p50: encodeP50,
+        retrieval_ms_p50_topk100: retrieveP50,
         component_e2e_ms_p50: meanComponentMap(groupRows.map((r) => r.latency?.component_e2e_ms_p50)),
       },
       storage: {
@@ -763,6 +771,22 @@ function meanComponentMap(maps) {
     out[key] = meanFinite(maps.map((map) => map?.[key]));
   }
   return out;
+}
+
+function latencySampleText(row) {
+  const suffix = row.family === "hybrid" ? " component queries" : " queries";
+  if (row.__aggregated && Array.isArray(row.__underlying)) {
+    const values = row.__underlying
+      .map((underlying) => toNumber(underlying.latency?.latency_sample_size))
+      .filter((value) => isFiniteNumber(value) && value > 0);
+    if (!values.length) return "--";
+    const minValue = Math.min(...values);
+    const maxValue = Math.max(...values);
+    if (minValue === maxValue) return `${formatNumber(minValue, 0)}${suffix}`;
+    return `${formatNumber(minValue, 0)}-${formatNumber(maxValue, 0)}${suffix}`;
+  }
+  const value = toNumber(row.latency?.latency_sample_size);
+  return isFiniteNumber(value) && value > 0 ? `${formatNumber(value, 0)}${suffix}` : "--";
 }
 
 function firstPresent(source, ...keys) {
@@ -1210,7 +1234,7 @@ function openDrawer(row) {
           <li><span class="label">Family</span><span class="value">${escapeHtml(FAMILY[row.family]?.label || row.family)}</span></li>
           <li><span class="label">Hardware</span><span class="value">${escapeHtml(row.protocol?.hardware || "unknown")}</span></li>
           <li><span class="label">Precision</span><span class="value">${escapeHtml(row.protocol?.precision || "unknown")}</span></li>
-          <li><span class="label">Latency sample</span><span class="value">${formatMaybe(row.latency?.latency_sample_size, 0)} queries</span></li>
+          <li><span class="label">Latency sample</span><span class="value">${escapeHtml(latencySampleText(row))}</span></li>
         </ul>
       </section>
 
