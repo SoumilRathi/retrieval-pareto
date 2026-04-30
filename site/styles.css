@@ -1418,10 +1418,29 @@ table.systems tbody tr:hover td:first-child::before {
   border-color: var(--accent);
 }
 
+.site-footer-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 .site-footer-links {
   display: flex;
   gap: 22px;
   flex-wrap: wrap;
+}
+
+.maker-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.maker-link span {
+  color: var(--accent);
+  font-size: 11px;
+  line-height: 1;
 }
 
 /* === Methodology ======================================================== */
@@ -1446,6 +1465,17 @@ main.method {
   letter-spacing: -0.018em;
   margin: 0 0 24px;
   font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+
+.method .inline-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+  transition: border-color 120ms ease;
+}
+
+.method .inline-link:hover {
+  border-bottom-color: var(--accent);
 }
 
 .method h1 em {
