@@ -1233,7 +1233,7 @@ function openDrawer(row) {
         <ul class="drawer-rows">
           <li><span class="label">Family</span><span class="value">${escapeHtml(FAMILY[row.family]?.label || row.family)}</span></li>
           <li><span class="label">Hardware</span><span class="value">${escapeHtml(row.protocol?.hardware || "unknown")}</span></li>
-          <li><span class="label">Precision</span><span class="value">${escapeHtml(row.protocol?.precision || "unknown")}</span></li>
+          ${row.protocol?.precision && row.protocol.precision !== "unknown" ? `<li><span class="label">Precision</span><span class="value">${escapeHtml(row.protocol.precision)}</span></li>` : ""}
           <li><span class="label">Latency sample</span><span class="value">${escapeHtml(latencySampleText(row))}</span></li>
         </ul>
       </section>
