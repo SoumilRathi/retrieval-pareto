@@ -20,6 +20,7 @@ def main() -> None:
     args = parse_args()
     results_dir = Path(args.results_dir)
     runs = list(iter_runs(results_dir, include_smoke=args.include_smoke))
+    backfill_hybrid_components(runs)
     payload = {
         "schema_version": "site.v1",
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -141,8 +142,62 @@ def normalize_result(result: dict[str, Any], path: Path) -> dict[str, Any] | Non
             else "batch=1 isolated when measured",
             "created_at": (result.get("run") or {}).get("created_at"),
         },
+        "component_sources": component_sources(retrieval_system.get("params") or {}),
         "result_path": str(path),
     }
+
+
+def component_sources(params: dict[str, Any]) -> dict[str, dict[str, str]]:
+    sources: dict[str, dict[str, str]] = {}
+    for component in params.get("components") or []:
+        if component == "sparse":
+            sources["sparse"] = {"model": "bm25-py", "system": "sparse-bm25"}
+        elif component == "dense":
+            sources["dense"] = {
+                "model": params.get("dense_model") or "",
+                "system": params.get("dense_system") or "dense-hnsw",
+            }
+        elif component == "li":
+            sources["li"] = {
+                "model": params.get("li_model") or "",
+                "system": params.get("li_system") or "li-fastplaid",
+            }
+    return sources
+
+
+def backfill_hybrid_components(rows: list[dict[str, Any]]) -> None:
+    by_key = {
+        (row["benchmark"], row["dataset"], row["model_id"], row["system"]): row
+        for row in rows
+    }
+    for row in rows:
+        if row.get("family") != "hybrid":
+            continue
+        sources = row.get("component_sources") or {}
+        latency_components = dict((row.get("latency") or {}).get("component_e2e_ms_p50") or {})
+        storage_components = dict((row.get("storage") or {}).get("component_index_bytes") or {})
+        for name, source in sources.items():
+            component = by_key.get(
+                (row["benchmark"], row["dataset"], source.get("model"), source.get("system"))
+            )
+            if not component:
+                continue
+            if latency_components.get(name) is None:
+                latency_components[name] = (component.get("latency") or {}).get("e2e_query_ms_p50")
+            if storage_components.get(name) is None:
+                storage_components[name] = (component.get("storage") or {}).get("index_bytes")
+
+        row["latency"]["component_e2e_ms_p50"] = latency_components or None
+        row["storage"]["component_index_bytes"] = storage_components or None
+
+        required = list(sources)
+        component_values = [latency_components.get(name) for name in required]
+        if required and all(is_number(value) for value in component_values):
+            total = float(sum(component_values))
+            row["latency"]["e2e_query_ms_p50"] = total
+            row["latency"]["retrieval_ms_p50_topk100"] = total
+            row["latency"]["status"] = "derived"
+            row["status"] = "completed"
 
 
 def normalize_status(status: str | None, latency: dict[str, Any], quality: dict[str, Any]) -> str:
