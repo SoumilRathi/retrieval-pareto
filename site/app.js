@@ -643,7 +643,7 @@ function renderBenchmarkIntro() {
       ${chipKeys
         .map((dataset) => {
           const pressed = onlyOne ? "true" : (dataset === selectedDataset ? "true" : "false");
-          const label = dataset === "all" ? "All" : datasetLabelFor(dataset, benchmarkRows);
+          const label = dataset === "all" ? "Complete configs" : datasetLabelFor(dataset, benchmarkRows);
           const disabled = onlyOne ? "disabled" : "";
           return `<button type="button" data-dataset="${escapeAttr(dataset)}" aria-pressed="${pressed}" ${disabled}>${escapeHtml(label)}</button>`;
         })
@@ -702,10 +702,13 @@ function currentBenchmarkRows() {
 }
 
 function aggregateAcrossDatasets(rows) {
+  const expectedDatasetCount = unique(rows.map((row) => row.dataset)).length;
   const groups = groupBy(rows, (row) => `${row.family}::${row.model_id}::${row.system}`);
-  return Object.values(groups).map((groupRows) => {
+  return Object.values(groups).filter((groupRows) => {
+    return unique(groupRows.map((row) => row.dataset)).length === expectedDatasetCount;
+  }).map((groupRows) => {
     const first = groupRows[0];
-    const count = groupRows.length;
+    const count = unique(groupRows.map((row) => row.dataset)).length;
     const aggregatedQuality = aggregateQuality(groupRows);
     const allCompleted = groupRows.every((r) => r.status === "completed");
     return {

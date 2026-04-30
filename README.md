@@ -90,6 +90,8 @@ Several rows are intentional skip/constraint rows:
 
 HNSW is reported as a high-recall CPU graph configuration (`M=32`, `ef_search=128`), not as a latency-tuned sweep. On several BEIR-scale corpora, exact flat search is faster because contiguous matrix multiplication beats graph traversal overhead. That is an empirical result, not a rendering bug.
 
+The website's `Complete configs` view only averages configurations that cover every dataset in the selected benchmark. Partial-scope rows such as `li-exact` are still available on individual dataset tabs.
+
 ## Hardware And Cost
 
 Latency rows use an A100 reference host. Cost is a derived conversion from measured p50 latency using the recorded A100 hourly price; it is included for intuition, not as an independent measurement. The headline plots should remain quality-vs-latency and quality-vs-storage.

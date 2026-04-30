@@ -116,3 +116,5 @@ FastPlaid full8192 rows marked `backend_oom_full8192_a100` are explicit deployme
 OPQ-IVF-PQ is skipped for corpora below 10k documents because small corpora under-train PQ codebooks and produce misleading results.
 
 Qwen3-Embedding-8B full-dimension OPQ-IVF-PQ is skipped because construction cost dominated the benchmark; lower Matryoshka dimensions are included where useful.
+
+The website's benchmark-level `Complete configs` view only averages configurations that cover every dataset in the selected benchmark. Partial-scope configurations remain visible on the individual dataset tabs.
